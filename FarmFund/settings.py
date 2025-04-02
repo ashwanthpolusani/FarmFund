@@ -76,9 +76,17 @@ WSGI_APPLICATION = 'FarmFund.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv("DATABASE_URL")
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'neondb',  # Database name from Neon
+        'USER': 'neondb_owner',  # Your Neon database user
+        'PASSWORD': os.getenv('DB_PASSWORD'),  # Use environment variable for security
+        'HOST': 'ep-round-cloud-a18vq5tn-pooler.ap-southeast-1.aws.neon.tech',  # Host from Neon
+        'PORT': '5432',  # Default PostgreSQL port
+        'OPTIONS': {
+            'sslmode': 'require',  # Ensures SSL connection
+        },
+    }
 }
 # DATABASES = {
 #     'default': {
