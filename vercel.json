@@ -1,16 +1,10 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "FarmFund/wsgi.py",
-      "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb", "runtime": "python3.10" }
-    }
+    { "src": "manage.py", "use": "@vercel/python" }
   ],
-   "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    }
+  "routes": [
+    { "src": "/static/(.*)", "dest": "/static/$1" },
+    { "src": "/media/(.*)", "dest": "/media/$1" }
   ]
 }
