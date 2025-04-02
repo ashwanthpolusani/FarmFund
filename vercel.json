@@ -7,10 +7,10 @@
       "config": { "maxLambdaSize": "15mb", "runtime": "python3.10" }
     }
   ],
-  "routes": [
+   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "FarmFund/wsgi.py"
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
     }
   ]
 }
