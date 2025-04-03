@@ -16,6 +16,6 @@
       "src": "/(.*)",
       "dest": "FarmFund/wsgi.py"
     }
-  ]
+  ],
+  "buildCommand": "python manage.py collectstatic --noinput"
 }
-
