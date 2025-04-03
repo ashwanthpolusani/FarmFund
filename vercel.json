@@ -17,5 +17,12 @@
       "dest": "FarmFund/wsgi.py"
     }
   ],
-  "buildCommand": "python manage.py collectstatic --noinput"
+  "build": {
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "FarmFund.settings"
+    },
+    "commands": [
+      "python manage.py collectstatic --noinput"
+    ]
+  }
 }
